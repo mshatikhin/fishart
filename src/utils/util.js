@@ -1,11 +1,14 @@
-export const WP_SITE = "sashapotapkin.wordpress.com";
-export const FLICKR_USER_ID = "144024833@N05";
-export const FLICKR_API_KEY = "38de914f5bb5d65fa32e8513ee30a4bc";
-export const portfolioIds = [
-    "72157671404424073",
-    "72157673828368380",
-    "72157671559881993",
-    "72157675588982696"
-];
-export const slideShowId = "72157675588982666";
-export const VimeoUserId = "user22508280";
+export const WP_SITE = "";
+export const FLICKR_USER_ID = "";
+export const FLICKR_API_KEY = "";
+export const portfolioIds = [];
+export const slideShowId = "";
+
+
+export const VimeoClientId = "020272da51a1bb15c6a7ac3ee46c833e67ca9e7e";
+export const VimeoClientSecret = "jqBpGpvkt8f6Ru+HIP1RfqgzB1q3xeYQBG+B+nuv2o4rr1dg4QzPqxezVTYRGttVToGaFOPQKPChhr+Brwhal7WHTrGSkErjTf+DRIBt3Kb4btRTRc5OOSQf0qPn7onY";
+
+export const VimeoArtemUserId = "user22508280";
+export const VimeoUlianaUserId = "user31112152";
+
+ 
