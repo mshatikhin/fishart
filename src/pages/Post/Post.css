@@ -1,0 +1,41 @@
+.main {
+    display: block;
+    width: 960px;
+    max-width: 100%;
+    margin: auto;
+    padding-top: 120px;
+}
+
+.main img, .main iframe {
+    max-width: 100% !important;
+}
+
+.back {
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 12px;
+    color: #666;
+    transition: .2s ease-in-out all;
+}
+
+.back:hover {
+    color: #222;
+}
+
+.backWrap {
+    position: relative;
+}
+
+.card {
+    margin-bottom: 30px;
+    color: rgba(0, 0, 0, .870588);
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+
+@media screen and (max-width: 980px) {
+    .main {
+        padding: 10px;
+    }
+}
