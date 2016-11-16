@@ -12,10 +12,8 @@ export default class Menu extends Component {
             <nav className={styles.wrap}>
                 <Link className={styles.link} activeClassName={styles.activeLink} to="/home">ГЛАВНАЯ</Link>
                 <Link className={styles.link} activeClassName={styles.activeLink} to="/portfolio">ПОРТФОЛИО</Link>
-                <Link className={styles.link} activeClassName={styles.activeLink} to="/stories">ИСТОРИИ</Link>
                 <Link className={styles.link} activeClassName={styles.activeLink} to="/services">УСЛУГИ</Link>
-                <Link className={styles.link} activeClassName={styles.activeLink} to="/blog">БЛОГ</Link>
-                <Link className={styles.link} activeClassName={styles.activeLink} to="/about">КОНТАКТЫ</Link>
+                <Link className={styles.link} activeClassName={styles.activeLink} to="/contact">КОНТАКТЫ</Link>
             </nav>
         );
     }
