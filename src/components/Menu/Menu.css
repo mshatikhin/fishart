@@ -5,11 +5,9 @@
 }
 
 .link {
-    font-weight: lighter;
     font-size: 12px;
-    color: #303030;
+    color: #fff;
     margin-right: 20px;
-    padding-bottom: 5px;
     transition: .2s color ease-out;
 }
 
@@ -19,9 +17,7 @@
 
 .activeLink {
     font-weight: normal;
-    color: #303030;
-    box-shadow: 0 2px 0 #909090;
-    padding-bottom: 5px;
+    color: #888;
 }
 
 @media screen and (max-width: 980px) {

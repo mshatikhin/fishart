@@ -5,11 +5,9 @@
     bottom: 0;
     display: block;
     margin: auto;
-    max-width: 100%;
-    background-size: cover;
-    background: #fff url("./images/footer.png") no-repeat 50% 50%;
-    width: 1080px;
-    height: 242px;
+    width: 100%;
+    background: #3A3A3A;
+    height: 120px;
 }
 
 .soc {
