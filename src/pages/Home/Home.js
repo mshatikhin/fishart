@@ -1,9 +1,7 @@
 // @flow
 import styles from "./Home.css";
 import {Component} from "react";
-import {connect} from "react-redux";
-import {VimeoArtemUserId, VimeoClientId, VimeoClientSecret} from "../../utils/util";
-import {videosRequest, updateVideos} from "../../redux/actions/vimeoActions";
+import Video from "react-html5video";
 
 class Home extends Component {
 
@@ -11,36 +9,23 @@ class Home extends Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.dispatch(videosRequest(VimeoArtemUserId, VimeoClientId, VimeoClientSecret))
-    }
-
-    componentWillUnmount() {
-        this.props.dispatch(updateVideos([]));
-    }
-
     render() {
-
         return (
             <div className={styles.root}>
                 <div className={styles.wrapper}>
-                   {this.props.videos.map((video, index) => <div 
-                            key={index} 
-                            className={styles.imgWrap}                            
-                            >                                                                                    
-                        </div>)}
+                    <Video autoPlay loop muted
+                           poster={require("./video/poster.png")}
+                           onCanPlayThrough={() => {}}
+                           className={styles.video}
+                    >
+                        <source src={require("./video/fishart_showreel_2015.mp4")} type="video/mp4"/>
+                        <source src={require("./video/fishart_showreel_2015.ogv")} type="video/ogv"/>
+                        <source src={require("./video/fishart_showreel_2015.webm")} type="video/webm"/>
+                    </Video>
                 </div>
             </div>
         );
     }
 }
 
-const mapStateToProps = (store) => {    
-    let {videos} = store.videos;    
-    console.log(videos);
-    return {
-        videos: videos || []
-    }
-};
-
-export default connect(mapStateToProps)(Home);
+export default Home;

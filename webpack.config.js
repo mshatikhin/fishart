@@ -58,7 +58,7 @@ var loaders = [
         loader: "style!css?modules&importLoaders=1&localIdentName=[name]__[local]!postcss-loader"
     },
     {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|mp4|ogv|webm)$/,
         loader: "url?name=[path][name].[ext]&limit=10000"
     }
 ];

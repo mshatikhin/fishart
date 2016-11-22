@@ -2,10 +2,9 @@
 import React, {PropTypes, Component} from "react";
 import styles from "./Portfolio.css";
 import {connect} from "react-redux";
-import {browserHistory, withRouter} from "react-router";
 import Loader from "../../components/Loader";
-import {albumsRequest} from "../../redux/actions/albumsActions";
-import {FLICKR_USER_ID, FLICKR_API_KEY, portfolioIds} from "../../utils/util";
+import {VimeoArtemUserId, VimeoClientId, VimeoClientSecret} from "../../utils/util";
+import {videosRequest, updateVideos} from "../../redux/actions/vimeoActions";
 
 const propTypes = {
     dispatch: PropTypes.func.isRequired,
@@ -19,35 +18,22 @@ class PortfolioContainer extends Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(albumsRequest(FLICKR_USER_ID, FLICKR_API_KEY));
+        this.props.dispatch(videosRequest(VimeoArtemUserId, VimeoClientId, VimeoClientSecret));
+    }
+
+    componentWillUnmount() {
+        this.props.dispatch(updateVideos([]));
     }
 
     render() {
         return (
             <div className={styles.main}>
-                {this.props.albums.length == 0 ? <Loader /> :
-                    this.props.albums
-                        .filter(a => portfolioIds.some(id => id == a.id))
-                        .map((album) => {
-                            const additionalClass = (album.primary_photo_extras.width_z - album.primary_photo_extras.height_z) > 0 ? styles.horizontalImage : styles.verticalImage;
-                            return <div
-                                key={album.id}
-                                className={styles.card}
-                                title="Перейти в альбом"
-                                onClick={() => { browserHistory.push("/portfolio/" + album.id) } }>
-                                <div className={styles.meta}>
-                                    <span className={styles.header}>
-                                        {album.title._content}
-                                        <span className={styles.delimeter}></span>
-                                        {album.photos} ФОТО
-                                    </span>
-                                </div>
-                                <img className={styles.mainImage + " " + additionalClass}
-                                     src={album.primary_photo_extras.url_z}
-                                     width={album.primary_photo_extras.width_z}
-                                     height={album.primary_photo_extras.height_z}/>
-                            </div>
-                        }) }
+                {this.props.videos.length == 0 ? <Loader /> :
+                    this.props.videos.map((video, index) => <div
+                        key={index}
+                        className={styles.imgWrap}
+                    >
+                    </div>)}
             </div>
         );
     }
@@ -55,8 +41,11 @@ class PortfolioContainer extends Component {
 
 PortfolioContainer.propTypes = propTypes;
 
-const mapStateToProps = (props) => {
-    const {albums} = props.portfolio;
-    return {albums};
+const mapStateToProps = (store) => {
+    let {videos} = store.videos;
+    return {
+        videos: videos || []
+    }
 };
-export default withRouter(connect(mapStateToProps)(PortfolioContainer));
+
+export default connect(mapStateToProps)(PortfolioContainer);
