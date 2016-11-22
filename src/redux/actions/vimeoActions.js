@@ -18,20 +18,26 @@ function vimeoAuth(client_id: string, client_secret: string) {
     })
 }
 
-export function videosRequest(userId: string, client_id: string, client_secret: string) {
+function loadUserVideos(userId: string, token: string) {
+    return fetch(`${vimeoUrl}/users/${userId}/videos`, {
+        headers: {
+            "Authorization": "Bearer " + token
+        }
+    })
+}
+
+export function videosRequest(userIds: string[], client_id: string, client_secret: string) {
     return (dispatch: any) => {
         vimeoAuth(client_id, client_secret)
             .then(response => response.json())
             .then(response => {
-                return fetch(`${vimeoUrl}/users/${userId}/videos`, {
-                    headers: {
-                        "Authorization": "Bearer " + response.access_token
-                    }
-                })
-                    .then(response => response.json())
-                    .then((response) => {
-                        return dispatch(updateVideos(response.data));
-                    });
+                Promise.all(userIds.map(uid => loadUserVideos(uid, response.access_token)))
+                    .then(responses => {
+                        return Promise.all(responses.map(r => r.json()));
+                    }).then(responses => {
+                    let videos = [].concat(...responses.map(r => r.data));
+                    dispatch(updateVideos(videos));
+                });
             }).catch(({errors}) => dispatch(updateVideos([])));
     };
 }

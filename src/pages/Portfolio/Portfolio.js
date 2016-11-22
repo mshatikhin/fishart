@@ -3,7 +3,7 @@ import React, {PropTypes, Component} from "react";
 import styles from "./Portfolio.css";
 import {connect} from "react-redux";
 import Loader from "../../components/Loader";
-import {VimeoArtemUserId, VimeoClientId, VimeoClientSecret} from "../../utils/util";
+import {VimeoArtemUserId, VimeoUlianaUserId, VimeoClientId, VimeoClientSecret} from "../../utils/util";
 import {videosRequest, updateVideos} from "../../redux/actions/vimeoActions";
 
 const propTypes = {
@@ -17,27 +17,23 @@ class PortfolioContainer extends Component {
     }
 
     componentDidMount() {
-        this.props.onVideoRequest(VimeoArtemUserId, VimeoClientId, VimeoClientSecret);
+        this.props.onVideoRequest([VimeoArtemUserId, VimeoUlianaUserId], VimeoClientId, VimeoClientSecret);
     }
 
     renderVideo({uri, name}){
-        let url = `https://player.vimeo.com${uri.replace("/videos/","/video/")}?badge=0&amp;autopause=0&amp;player_id=0`;
+        let url = `https://player.vimeo.com${uri.replace("/videos/","/video/")}?badge=1&title=0&byline=0&autopause=1`;
         return <div className={styles.card}>
             <iframe
                 width={500}
                 height={281}
                 src={url}
-                frameborder="0"
+                frameBorder="0"
                 title={name}
-                webkitallowfullscreen=""
-                mozallowfullscreen=""
-                allowfullscreen=""></iframe>
+                allowFullScreen=""></iframe>
         </div>
     }
 
     render() {
-        debugger
-
         return (
             <div className={styles.main}>
                 {this.props.videos.length == 0 ? <Loader /> : this.props.videos.map(this.renderVideo)}
@@ -45,7 +41,6 @@ class PortfolioContainer extends Component {
         );
     }
 }
-
 PortfolioContainer.propTypes = propTypes;
 
 const mapStateToProps = (store) => {
