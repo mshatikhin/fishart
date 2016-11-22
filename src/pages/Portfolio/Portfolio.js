@@ -7,7 +7,6 @@ import {VimeoArtemUserId, VimeoClientId, VimeoClientSecret} from "../../utils/ut
 import {videosRequest, updateVideos} from "../../redux/actions/vimeoActions";
 
 const propTypes = {
-    dispatch: PropTypes.func.isRequired,
     albums: PropTypes.any
 };
 
@@ -18,22 +17,30 @@ class PortfolioContainer extends Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(videosRequest(VimeoArtemUserId, VimeoClientId, VimeoClientSecret));
+        this.props.onVideoRequest(VimeoArtemUserId, VimeoClientId, VimeoClientSecret);
     }
 
-    componentWillUnmount() {
-        this.props.dispatch(updateVideos([]));
+    renderVideo({uri, name}){
+        let url = `https://player.vimeo.com${uri.replace("/videos/","/video/")}?badge=0&amp;autopause=0&amp;player_id=0`;
+        return <div className={styles.card}>
+            <iframe
+                width={500}
+                height={281}
+                src={url}
+                frameborder="0"
+                title={name}
+                webkitallowfullscreen=""
+                mozallowfullscreen=""
+                allowfullscreen=""></iframe>
+        </div>
     }
 
     render() {
+        debugger
+
         return (
             <div className={styles.main}>
-                {this.props.videos.length == 0 ? <Loader /> :
-                    this.props.videos.map((video, index) => <div
-                        key={index}
-                        className={styles.imgWrap}
-                    >
-                    </div>)}
+                {this.props.videos.length == 0 ? <Loader /> : this.props.videos.map(this.renderVideo)}
             </div>
         );
     }
@@ -48,4 +55,7 @@ const mapStateToProps = (store) => {
     }
 };
 
-export default connect(mapStateToProps)(PortfolioContainer);
+export default connect(mapStateToProps, {
+    onUpdateVideos: updateVideos,
+    onVideoRequest: videosRequest
+})(PortfolioContainer);

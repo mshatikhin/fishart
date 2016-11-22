@@ -14,9 +14,9 @@ class Services extends Component {
                     <thead>
                     <tr>
                         <th>Перечень услуг</th>
-                        <th>Small Sasha</th>
-                        <th>Big Sasha</th>
-                        <th>Super Sasha</th>
+                        <th>Стандарт</th>
+                        <th>Полный день</th>
+                        <th>Всё включено</th>
                     </tr>
                     </thead>
                     <tbody>

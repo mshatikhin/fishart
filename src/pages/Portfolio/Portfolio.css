@@ -1,6 +1,6 @@
 .main {
     display: block;
-    width: 960px;
+    width: 1020px;
     max-width: 100%;
     margin: auto;
     padding-top: 120px;
@@ -24,10 +24,10 @@
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    width: 470px;
-    height: 320px;
+    width: 500px;
+    height: 280px;
     margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     color: rgba(0, 0, 0, .870588);
     background-color: rgb(255, 255, 255);
     transition: all 450ms cubic-bezier(.23, 1, .32, 1) 0ms;
@@ -44,43 +44,9 @@
     margin-right: 0;
 }
 
-.meta {
-    text-align: center;
-    box-sizing: border-box;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-    background: rgba(0, 0, 0, .5);
-    color: #fff;
-    transition: .2s all cubic-bezier(.215, .61, .355, 1);
-    padding: 10px 0;
-    height: 48px;
-}
-
-.header {
-    font-weight: 500;
-    box-sizing: border-box;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #fff;
-}
-
-.delimeter {
-    margin: 0 10px;
-    background: #999;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.horizontalImage {
-    margin: 0 0 0 -25%;
-}
-
-.verticalImage {
-    margin: -15% 0 0 0;
+.videoFrame {
+    width: 500px;
+    max-width: 100%;
 }
 
 @media screen and (max-width: 980px) {
