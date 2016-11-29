@@ -21,7 +21,7 @@ class PortfolioContainer extends Component {
     }
 
     renderVideo({uri, name}){
-        let url = `https://player.vimeo.com${uri.replace("/videos/","/video/")}?badge=1&title=0&byline=0&autopause=1`;
+        let url = `https://player.vimeo.com${uri.replace("/videos/","/video/")}?badge=0&title=0&byline=0&autopause=1`;
         return <div className={styles.card}>
             <iframe
                 width={500}

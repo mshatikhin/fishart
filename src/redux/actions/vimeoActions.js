@@ -35,9 +35,8 @@ export function videosRequest(userIds: string[], client_id: string, client_secre
                     .then(responses => {
                         return Promise.all(responses.map(r => r.json()));
                     }).then(responses => {
-                    let videos = [].concat(...responses.map(r => r.data));
+                    let videos = [].concat(...responses.map(r => r.data)).slice(0, 6);
                     let portfolio = videos.filter(v => v.tags.some(t => t === "portfolio"));
-                    debugger
                     dispatch(updateVideos(videos));
                 });
             }).catch(({errors}) => dispatch(updateVideos([])));

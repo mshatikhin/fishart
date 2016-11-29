@@ -2,30 +2,67 @@
     display: block;
     width: 100%;
     margin: auto;
-    padding-top: 120px;
+    padding-top: 100px;
     background: #fff;
-    max-width: 1280px;
+    max-width: 100%;
+    text-align: center;
 }
 
 .wrapper {
 }
 
 .video {
+    position: relative;
     outline: none !important;
 }
 
 .video video {
-    max-width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
 }
 
-@media screen and (max-width: 1200px) {
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+    background: rgba(0, 0, 0, .3);
+}
+
+@media screen and (max-width: 980px) {
     .root {
-        padding-top: 10px;
+        padding-top: 0;
     }
 }
 
 @media screen and (max-width: 800px) {
     .header {
         font-size: 1em;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video video {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video video {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+/* Если есть поддержка object-fit (Chrome/Chrome для Android, Safari в iOS 8 и Opera), используем его: */
+@supports (object-fit: cover) {
+    .video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
