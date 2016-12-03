@@ -1,6 +1,10 @@
 import React, {Component} from "react";
 import styles from "./Menu.css";
-import { Link } from "react-router";
+import {Link} from "react-router";
+
+const MenuLink = ({url, title}) => <Link className={styles.link} activeClassName={styles.activeLink} to={url}>
+    {title}
+</Link>
 
 export default class Menu extends Component {
     constructor(props) {
@@ -10,10 +14,10 @@ export default class Menu extends Component {
     render() {
         return (
             <nav className={styles.wrap}>
-                <Link className={styles.link} activeClassName={styles.activeLink} to="/home">ГЛАВНАЯ</Link>
-                <Link className={styles.link} activeClassName={styles.activeLink} to="/portfolio">ПОРТФОЛИО</Link>
-                <Link className={styles.link} activeClassName={styles.activeLink} to="/services">УСЛУГИ</Link>
-                <Link className={styles.link} activeClassName={styles.activeLink} to="/contact">КОНТАКТЫ</Link>
+                <MenuLink url="/home" title="ГЛАВНАЯ"/>
+                <MenuLink url="/portfolio" title="ПОРТФОЛИО"/>
+                <MenuLink url="/services" title="УСЛУГИ"/>
+                <MenuLink url="/contact" title="КОНТАКТЫ"/>
             </nav>
         );
     }
