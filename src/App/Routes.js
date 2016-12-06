@@ -1,4 +1,5 @@
-﻿import {Route, IndexRoute} from "react-router";
+﻿import React from "react";
+import {Route, IndexRoute} from "react-router";
 import Layout from "../components/Layout/Layout";
 import Portfolio from "../pages/Portfolio/Portfolio";
 import Home from "../pages/Home";

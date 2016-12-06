@@ -32,6 +32,9 @@ var plugins = [
         filename: "../index.html",
         template: "src/static/TemplateIndex.html",
         inject: "body"
+    }),
+    new webpack.ProvidePlugin({
+        "React": "react",
     })
 ];
 
@@ -41,7 +44,7 @@ var loaders = [
     {
         test: /\.js$/,
         loader: "react-hot!babel",
-        include: path.resolve(__dirname, "src")
+        exclude: /node_modules/,
     },
     {
         test: /\.css$/,
@@ -74,14 +77,10 @@ var config = {
     },
     module: {
         loaders: loaders,
-        noparse: [/\/node_modules\/(react)/]
+        noparse: [/node_modules/]
     },
     postcss: function () {
         return [autoprefixer, precss];
-    },
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
     },
     plugins: plugins
 };
