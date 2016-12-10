@@ -1,0 +1,86 @@
+.root {
+    text-align: center;
+    margin: auto;
+    width: 700px;
+    height: 500px;
+    max-width: 100%;
+    padding: 50px 0;
+    user-select: none;
+}
+
+.avatarWrapper {
+    display: inline-block;
+}
+
+.avatar {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    z-index: 1;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 3px 0 #b1b1b1;
+}
+
+.avatar img {
+    min-width: 100%;
+    max-width: none;
+    height: 80px;
+}
+
+.prev, .next {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.prev {
+    margin-right: 50px;
+}
+
+.next {
+    margin-left: 50px;
+}
+
+.prevAvatar {
+    margin-right: -10px;
+}
+
+.nextAvatar {
+    margin-left: -10px;
+}
+
+.prevAvatar:hover, .nextAvatar:hover {
+    opacity: 1;
+}
+
+.prevAvatar, .nextAvatar {
+    opacity: .7;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    transition: .2s all ease-out;
+    box-shadow: none;
+    z-index: 0;
+}
+
+.prevAvatar img, .nextAvatar img {
+    min-width: 100%;
+    max-width: none;
+    height: 60px;
+}
+
+.title {
+    margin: 25px 0;
+    font-weight: bold;
+}
+
+.comment {
+    font-style: italic;
+    font-weight: 100;
+    color: #666;
+}
