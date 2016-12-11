@@ -36,7 +36,7 @@ var plugins = [
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
-        "React": "react",
+        "React": "react"
     })
 ];
 

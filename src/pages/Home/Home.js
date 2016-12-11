@@ -6,7 +6,7 @@ import Reviews from "../../components/Reviews";
 
 class Home extends Component {
 
-    constructor(props) {
+    constructor(props: any) {
         super(props);
     }
 

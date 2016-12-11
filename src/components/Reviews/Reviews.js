@@ -2,6 +2,7 @@
 import {Component} from "react";
 import styles from "./Reviews.css";
 import classnames from "classnames";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 const reviews = [
     {
@@ -47,8 +48,8 @@ const reviews = [
 ];
 
 const ReviewText = ({review}) => <div>
-    <div className={styles.title}>{review.name}</div>
-    <div className={styles.comment}>{review.text}</div>
+      <div className={styles.title}>{review.name}</div>
+      <div className={styles.comment}>{review.text}</div>
 </div>;
 
 const ReviewAvatars = ({reviews, activeIndex, prev, next}) => {
@@ -67,9 +68,9 @@ type IState = {
 
 class Reviews extends Component {
     state: IState;
-    timer;
+    timer: any;
 
-    constructor(props) {
+    constructor(props: any) {
         super(props);
         this.state = {
             activeReviewIndex: 0
@@ -89,16 +90,22 @@ class Reviews extends Component {
             <div className={styles.root}>
                 <div>
                     <div className={styles.prev} onClick={this.prev}>prev</div>
-                    {<ReviewAvatars
-                        reviews={reviews}
-                        activeIndex={this.state.activeReviewIndex}
-                        prev={this.prev}
-                        next={this.next}
-                    />}
+                      <ReviewAvatars
+                          reviews={reviews}
+                          activeIndex={this.state.activeReviewIndex}
+                          prev={this.prev}
+                          next={this.next}
+                      />
                     <div className={styles.next} onClick={this.next}>next</div>
                 </div>
                 <div>
-                    {<ReviewText review={reviews[this.state.activeReviewIndex]}/>}
+                    <ReactCSSTransitionGroup
+                      transitionName="example"
+                      transitionEnterTimeout={300}
+                      transitionLeaveTimeout={300}                      
+                      >
+                      <ReviewText review={reviews[this.state.activeReviewIndex]}/>
+                    </ReactCSSTransitionGroup>
                 </div>
             </div>
         );
