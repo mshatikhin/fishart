@@ -1,8 +1,6 @@
 .root {
     text-align: center;
     margin: auto;
-    width: 700px;
-    height: 500px;
     max-width: 100%;
     padding: 50px 0;
     user-select: none;
@@ -86,22 +84,17 @@
     color: #666;
 }
 
-:global {
-  .example-enter {
-    opacity: 0.01;
-  }
+.reviewWrapper {
+    display: inline-block;
+    vertical-align: top;
+    width: 700px;
+}
 
-  .example-enter.example-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-  }
+.reviewsWrapper {
+    overflow: hidden;
+}
 
-  .example-leave {
-    opacity: 1;
-  }
-
-  .example-leave.example-leave-active {
-    opacity: 0.01;
-    transition: opacity 300ms ease-in;
-  }
+.reviewsContainer {
+    margin-left: 0;
+    transition: .3s all ease-in-out;
 }

@@ -2,9 +2,14 @@
 import {Component} from "react";
 import styles from "./Reviews.css";
 import classnames from "classnames";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
-const reviews = [
+type IReview = {
+    image: string;
+    name: string;
+    text: string;
+}
+
+const reviews: IReview[] = [
     {
         image: require("./images/1.jpg"),
         name: "Test",
@@ -47,9 +52,15 @@ const reviews = [
     }
 ];
 
-const ReviewText = ({review}) => <div>
+const ReviewText = ({review}) => <div className={styles.reviewWrapper}>
       <div className={styles.title}>{review.name}</div>
       <div className={styles.comment}>{review.text}</div>
+</div>;
+
+const ReviewTexts = ({reviews, activeIndex, width}) => <div className={styles.reviewsWrapper}>
+    <div className={styles.reviewsContainer} style={{width: reviews.length * width, marginLeft: -width * activeIndex}}>
+        {reviews.map((r,idx) => <ReviewText key={idx} review={r} />)}
+    </div>
 </div>;
 
 const ReviewAvatars = ({reviews, activeIndex, prev, next}) => {
@@ -66,11 +77,17 @@ type IState = {
     activeReviewIndex: number;
 }
 
+type IProps = {
+    width: number;
+    reviews: IReview[];
+}
+
 class Reviews extends Component {
     state: IState;
+    props: IProps;
     timer: any;
 
-    constructor(props: any) {
+    constructor(props: IProps) {
         super(props);
         this.state = {
             activeReviewIndex: 0
@@ -87,7 +104,7 @@ class Reviews extends Component {
 
     render() {
         return (
-            <div className={styles.root}>
+            <div className={styles.root} style={{width: this.props.width}}>
                 <div>
                     <div className={styles.prev} onClick={this.prev}>prev</div>
                       <ReviewAvatars
@@ -98,15 +115,7 @@ class Reviews extends Component {
                       />
                     <div className={styles.next} onClick={this.next}>next</div>
                 </div>
-                <div>
-                    <ReactCSSTransitionGroup
-                      transitionName="example"
-                      transitionEnterTimeout={300}
-                      transitionLeaveTimeout={300}                      
-                      >
-                      <ReviewText review={reviews[this.state.activeReviewIndex]}/>
-                    </ReactCSSTransitionGroup>
-                </div>
+                <ReviewTexts reviews={reviews} activeIndex={this.state.activeReviewIndex} width={this.props.width}/>
             </div>
         );
     }
@@ -131,5 +140,15 @@ class Reviews extends Component {
         });
     }
 }
+
+Reviews.propTypes = {
+    reviews: React.PropTypes.array,
+    width: React.PropTypes.number
+};
+
+Reviews.defaultProps = {
+    reviews: [],
+    width: 700
+};
 
 export default Reviews;
