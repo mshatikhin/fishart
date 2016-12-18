@@ -52,14 +52,14 @@ const reviews: IReview[] = [
     }
 ];
 
-const ReviewText = ({review}) => <div className={styles.reviewWrapper}>
-      <div className={styles.title}>{review.name}</div>
-      <div className={styles.comment}>{review.text}</div>
+const ReviewText = ({review, width}) => <div className={styles.reviewWrapper} style={{width: width}}>
+    <div className={styles.title}>{review.name}</div>
+    <div className={styles.comment}>{review.text}</div>
 </div>;
 
 const ReviewTexts = ({reviews, activeIndex, width}) => <div className={styles.reviewsWrapper}>
     <div className={styles.reviewsContainer} style={{width: reviews.length * width, marginLeft: -width * activeIndex}}>
-        {reviews.map((r,idx) => <ReviewText key={idx} review={r} />)}
+        {reviews.map((r, idx) => <ReviewText key={idx} review={r} width={width}/>)}
     </div>
 </div>;
 
@@ -82,6 +82,9 @@ type IProps = {
     reviews: IReview[];
 }
 
+var initialPoint;
+var finalPoint;
+
 class Reviews extends Component {
     state: IState;
     props: IProps;
@@ -90,32 +93,38 @@ class Reviews extends Component {
     constructor(props: IProps) {
         super(props);
         this.state = {
-            activeReviewIndex: 0
+            activeReviewIndex: 0,
+            width: props.width
         }
     }
 
     componentDidMount() {
-       // this.timer = setInterval(this.next, 3000)
+        // this.timer = setInterval(this.next, 3000);
+        window.addEventListener("resize", this.fixWidth);
+        document.addEventListener("touchstart", this.touchstart, false);
+        document.addEventListener("touchend", this.touchend, false);
+        this.fixWidth();
     }
 
     componentWillUnmount() {
+        window.removeEventListener("resize", this.fixWidth);
         clearInterval(this.timer);
     }
 
     render() {
         return (
-            <div className={styles.root} style={{width: this.props.width}}>
+            <div className={styles.root} style={{width: this.state.width}}>
                 <div>
-                    <div className={styles.prev} onClick={this.prev}>prev</div>
-                      <ReviewAvatars
-                          reviews={reviews}
-                          activeIndex={this.state.activeReviewIndex}
-                          prev={this.prev}
-                          next={this.next}
-                      />
-                    <div className={styles.next} onClick={this.next}>next</div>
+                    <div className={styles.prev} onClick={this.prev}>p</div>
+                    <ReviewAvatars
+                        reviews={reviews}
+                        activeIndex={this.state.activeReviewIndex}
+                        prev={this.prev}
+                        next={this.next}
+                    />
+                    <div className={styles.next} onClick={this.next}>n</div>
                 </div>
-                <ReviewTexts reviews={reviews} activeIndex={this.state.activeReviewIndex} width={this.props.width}/>
+                <ReviewTexts reviews={reviews} activeIndex={this.state.activeReviewIndex} width={this.state.width}/>
             </div>
         );
     }
@@ -138,7 +147,50 @@ class Reviews extends Component {
         this.setState({
             activeReviewIndex
         });
-    }
+    };
+
+    fixWidth = () => {
+        const width = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+        if (width < 700) {
+            this.setState({
+                width: width-50
+            })
+        } else if (this.state.width != 700) {
+            this.setState({
+                width: 700
+            })
+        }
+    };
+
+
+
+    touchstart = (event) =>{
+        event.preventDefault();
+        event.stopPropagation();
+        initialPoint=event.changedTouches[0];
+    };
+
+    touchend = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        if(event.target.className == styles.comment){
+
+            finalPoint=event.changedTouches[0];
+            const xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+            const yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+            if (xAbs > 20 || yAbs > 20) {
+                if (xAbs > yAbs) {
+                    if (finalPoint.pageX < initialPoint.pageX){
+                       this.next();
+                    } else {
+                        this.prev();
+                    }
+                }
+            }
+        }
+    };
 }
 
 Reviews.propTypes = {

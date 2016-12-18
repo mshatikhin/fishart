@@ -1,7 +1,6 @@
 .root {
     text-align: center;
     margin: auto;
-    max-width: 100%;
     padding: 50px 0;
     user-select: none;
 }
@@ -87,7 +86,6 @@
 .reviewWrapper {
     display: inline-block;
     vertical-align: top;
-    width: 700px;
 }
 
 .reviewsWrapper {
@@ -97,4 +95,12 @@
 .reviewsContainer {
     margin-left: 0;
     transition: .3s all ease-in-out;
+    overflow: hidden;
+}
+
+
+@media screen and (max-width: 320px) {
+    .prev, .next {
+        display: none;
+    }
 }
