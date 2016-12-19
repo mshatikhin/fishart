@@ -2,27 +2,27 @@
     position: fixed;
     color: #333;
     background: #fbfbfb;
-    padding-top: 20px;
     top: 0;
     left: 0;
     display: block;
-    height: auto;
+    height: 80px;
     max-width: 100%;
     width: 100%;
     z-index: 100;
+    padding: 0 20px;
 }
 
 .headerWrapper {
     margin: 0 auto;
     max-width: 100%;
     text-align: center;
-    width: 960px;
+    width: 1280px;
     overflow: hidden;
 }
 
 .menu {
     max-width: 100%;
-    text-align: left;
+    text-align: right;
 }
 
 .title {
@@ -33,6 +33,12 @@
 
 .logoLink {
     float: left;
+    font-family: 'Pacifico', cursive, Helvetica, Arial, sans-serif;
+    font-size: 36px;
+    color: #ff9f89;
+    letter-spacing: 0.3px;
+    text-align: left;
+    line-height: 80px;
 }
 
 .logo {

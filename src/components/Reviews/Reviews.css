@@ -15,8 +15,8 @@
     vertical-align: middle;
     box-sizing: border-box;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     overflow: hidden;
     z-index: 1;
     border: 3px solid #fff;
@@ -27,21 +27,35 @@
     object-fit: cover;
     min-width: 100%;
     max-width: none;
-    height: 80px;
+    height: 120px;
 }
 
 .prev, .next {
     display: inline-block;
     vertical-align: middle;
     box-sizing: border-box;
+    background: none;
+    border: none;
+    outline: none;
+    height: 32px;
+    width: 18px;
+    opacity: .7;
+    transition: .3s all ease;
+}
+
+.prev:hover, .next:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .prev {
     margin-right: 50px;
+    background: url("./images/left.png") no-repeat;
 }
 
 .next {
     margin-left: 50px;
+    background: url("./images/right.png") no-repeat;
 }
 
 .prevAvatar {
@@ -59,8 +73,8 @@
 .prevAvatar, .nextAvatar {
     opacity: .7;
     cursor: pointer;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     transition: .2s all ease-out;
     box-shadow: none;
     z-index: 0;
@@ -69,18 +83,21 @@
 .prevAvatar img, .nextAvatar img {
     min-width: 100%;
     max-width: none;
-    height: 60px;
+    height: 80px;
 }
 
 .title {
-    margin: 25px 0;
+    margin: 40px 0;
     font-weight: bold;
 }
 
 .comment {
     font-style: italic;
     font-weight: 100;
-    color: #666;
+    font-size: 14px;
+    color: #909090;
+    line-height: 28px;
+    text-align: center;
 }
 
 .reviewWrapper {
@@ -97,7 +114,6 @@
     transition: .3s all ease-in-out;
     overflow: hidden;
 }
-
 
 @media screen and (max-width: 320px) {
     .prev, .next {

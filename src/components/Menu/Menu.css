@@ -1,14 +1,22 @@
 .wrap {
     display: block;
     width: 100%;
-    margin: 20px auto 15px auto;
+    height: 80px;
 }
 
 .link {
-    font-size: 12px;
-    color: #333;
-    margin-right: 20px;
+    color: #909090;
+    margin-right: 40px;
     transition: .2s color ease-out;
+    font-size: 13px;
+    letter-spacing: 0.54px;
+    text-align: left;
+    font-weight: 100;
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    line-height: 80px;
+    border-bottom: 4px solid transparent;
 }
 
 .link:last-child {
@@ -16,8 +24,15 @@
 }
 
 .activeLink {
-    font-weight: normal;
-    color: #888;
+    color: #303030;
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    border-bottom: 4px solid #696969;
+}
+
+.socials {
+    display: inline-block;
 }
 
 @media screen and (max-width: 980px) {
@@ -29,6 +44,7 @@
 @media screen and (max-width: 500px) {
     .wrap {
         text-align: center;
+        height: auto;
     }
 
     .link {
@@ -39,6 +55,7 @@
         padding: 4px;
         font-weight: 300;
         margin-bottom: 1px;
+        text-align: center;
     }
 
     .link:hover {

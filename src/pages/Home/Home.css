@@ -2,7 +2,7 @@
     display: block;
     width: 100%;
     margin: auto;
-    padding-top: 100px;
+    padding-top: 80px;
     background: #fff;
     max-width: 100%;
     text-align: center;
@@ -32,15 +32,29 @@
     background: rgba(0, 0, 0, .3);
 }
 
-@media screen and (max-width: 980px) {
-    .root {
-        padding-top: 0;
-    }
+.reviewsWrapper {
+    background: #fcfbfd;
+    margin-top: -25px;
+}
+
+.reviewsHeader {
+    padding-top: 60px;
+    font-weight: 100;
+    font-size: 28px;
+    color: #303030;
+    letter-spacing: 0;
+    text-align: center;
 }
 
 @media screen and (max-width: 800px) {
     .header {
         font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .root {
+        padding-top: 430px;
     }
 }
 

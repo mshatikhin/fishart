@@ -115,14 +115,14 @@ class Reviews extends Component {
         return (
             <div className={styles.root} style={{width: this.state.width}}>
                 <div>
-                    <div className={styles.prev} onClick={this.prev}>p</div>
+                    <button className={styles.prev} onClick={this.prev}></button>
                     <ReviewAvatars
                         reviews={reviews}
                         activeIndex={this.state.activeReviewIndex}
                         prev={this.prev}
                         next={this.next}
                     />
-                    <div className={styles.next} onClick={this.next}>n</div>
+                    <button className={styles.next} onClick={this.next}></button>
                 </div>
                 <ReviewTexts reviews={reviews} activeIndex={this.state.activeReviewIndex} width={this.state.width}/>
             </div>

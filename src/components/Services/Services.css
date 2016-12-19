@@ -1,9 +1,14 @@
 .root {
     display: block;
-    width: 960px;
     max-width: 100%;
     margin: auto;
     padding-top: 100px;
+}
+
+.tableWrapper {
+    max-width: 1280px;
+    width: 100%;
+    margin: auto auto 50px;
 }
 
 .table {
@@ -21,7 +26,7 @@
 .table td:nth-child(2),
 .table td:nth-child(3),
 .table td:nth-child(4) {
-    width: 120px;
+    width: 240px;
     text-align: center;
     padding: 0 10px;
     font-weight: 100;
@@ -30,7 +35,6 @@
 }
 
 .table th {
-    font-family: Comfortaa, Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 16px;
     color: #303030;
@@ -42,6 +46,7 @@
 }
 
 .table td {
+    font-weight: 100;
     font-size: 13px;
     color: #606060;
     padding: 10px;
@@ -69,7 +74,34 @@
     width: 20px;
     height: 20px;
     margin: auto;
-    background: url("./images/green.png") no-repeat 50% 50%;
+    background: #ff9f89;
+    /*url("./images/green.png") no-repeat 50% 50%;*/
+    border-radius: 50%;
+}
+
+.green:after {
+    content: "";
+    display: inline-block;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: rotate(45deg);
+    width: 6px;
+    height: 9px;
+    margin: 2px;
+}
+
+.advantages {
+    padding-top: 50px;
+    background: #fcfbfd;
+}
+
+.advantagesHeader {
+    font-weight: 100;
+    font-size: 28px;
+    color: #303030;
+    letter-spacing: 0;
+    text-align: center;
+    margin: auto;
 }
 
 @media screen and (max-width: 980px) {

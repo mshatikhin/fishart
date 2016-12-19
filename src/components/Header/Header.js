@@ -1,11 +1,9 @@
 // @flow
 
 import styles from "./Header.css";
-import image from "./images/logo.png";
-
 import Menu from "../Menu/Menu";
 import {Link} from "react-router";
-import {Component} from "react";
+import React, {Component} from "react";
 
 export default class Layout extends Component {
 
@@ -17,9 +15,10 @@ export default class Layout extends Component {
         return (
             <div className={styles.header}>
                 <div className={styles.headerWrapper}>
-                    {/*<Link to="/" className={styles.logoLink}>*/}
+                    <Link to="/" className={styles.logoLink}>
                         {/*<img src={image} className={styles.logo} title="" alt=""/>*/}
-                    {/*</Link>*/}
+                        Fish Art
+                    </Link>
                     <div className={styles.menu}>
                         <Menu />
                     </div>

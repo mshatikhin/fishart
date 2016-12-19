@@ -1,6 +1,6 @@
 .about {
     display: block;
-    width: 960px;
+    width: 1280px;
     max-width: 100%;
     margin: auto;
     padding-top: 115px;
@@ -24,8 +24,17 @@
 }
 
 .avatar {
-    /*float: left;*/
+    float: left;
     margin-right: 35px;
+}
+
+.avatar img {
+    max-width: 100%;
+}
+
+.article {
+    font-size: 15px;
+    font-weight: 100;
 }
 
 .article:after {

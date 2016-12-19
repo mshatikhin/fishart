@@ -1,0 +1,32 @@
+.soc {
+    display: inline-block;
+}
+
+.vk {
+    cursor: pointer;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    background: transparent url("./images/vk.svg") no-repeat 50% 50%;
+    margin-right: 15px;
+}
+
+.facebook {
+    cursor: pointer;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    background: transparent url("./images/facebook.svg") no-repeat 50% 50%;
+    margin-right: 15px;
+}
+
+.instagram {
+    cursor: pointer;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    background: transparent url("./images/instagram.svg") no-repeat 50% 50%;
+}
