@@ -19,7 +19,7 @@ function vimeoAuth(client_id: string, client_secret: string) {
 }
 
 function loadUserVideos(userId: string, token: string) {
-    return fetch(`${vimeoUrl}/users/${userId}/videos`, {
+    return fetch(`${vimeoUrl}/users/${userId}/videos?per_page=100&sort=date&direction=desc`, {
         headers: {
             "Authorization": "Bearer " + token
         }
@@ -35,9 +35,10 @@ export function videosRequest(userIds: string[], client_id: string, client_secre
                     .then(responses => {
                         return Promise.all(responses.map(r => r.json()));
                     }).then(responses => {
-                    let videos = [].concat(...responses.map(r => r.data)).slice(0, 6);
-                    let portfolio = videos.filter(v => v.tags.some(t => t === "portfolio"));
-                    dispatch(updateVideos(videos));
+                    responses.forEach(r => r.total - r.data.length > 0 ? console.log("need more video") : "");
+                    let videos = [].concat(...responses.map(r => r.data));
+                    let portfolio = videos.filter(v => v.tags.some(t => t.tag === "portfolio"));
+                    dispatch(updateVideos(portfolio));
                 });
             }).catch(({errors}) => dispatch(updateVideos([])));
     };
