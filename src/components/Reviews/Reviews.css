@@ -15,18 +15,19 @@
     vertical-align: middle;
     box-sizing: border-box;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     overflow: hidden;
-    z-index: 1;
     border: 3px solid #fff;
-    box-shadow: 0 1px 3px 0 #b1b1b1;
+    background: no-repeat center;
+    background-size: cover;
+    transition: background-image .1s ease-out;
 }
 
-.avatar img {
-    object-fit: cover;
-    min-width: 100%;
-    max-width: none;
+.avatarActive {
+    z-index: 1;
+    box-shadow: 0 1px 3px 0 #b1b1b1;
+    width: 120px;
     height: 120px;
 }
 
@@ -73,10 +74,6 @@
 .prevAvatar, .nextAvatar {
     opacity: .7;
     cursor: pointer;
-    width: 80px;
-    height: 80px;
-    transition: .2s all ease-out;
-    box-shadow: none;
     z-index: 0;
 }
 
@@ -95,7 +92,7 @@
     font-style: italic;
     font-weight: 100;
     font-size: 14px;
-    color: #909090;
+    color: #787878;
     line-height: 28px;
     text-align: center;
 }

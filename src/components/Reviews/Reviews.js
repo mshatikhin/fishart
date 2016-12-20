@@ -63,13 +63,26 @@ const ReviewTexts = ({reviews, activeIndex, width}) => <div className={styles.re
     </div>
 </div>;
 
+const getImage = (activeIndex, index) => {
+    return reviews[activeIndex + index] == null
+        ? reviews[reviews.length + index] == null ? reviews[0] : reviews[reviews.length + index]
+        : reviews[activeIndex + index]
+};
+
 const ReviewAvatars = ({reviews, activeIndex, prev, next}) => {
-    let prevReview = reviews[activeIndex - 1] == null ? reviews[reviews.length - 1] : reviews[activeIndex - 1];
-    let nextReview = reviews[activeIndex + 1] == null ? reviews[0] : reviews[activeIndex + 1];
     return <div className={styles.avatarWrapper}>
-        <div className={classnames(styles.avatar, styles.prevAvatar)} onClick={prev}><img src={prevReview.image}/></div>
-        <div className={styles.avatar}><img src={reviews[activeIndex].image}/></div>
-        <div className={classnames(styles.avatar, styles.nextAvatar)} onClick={next}><img src={nextReview.image}/></div>
+        <div className={classnames(styles.avatar, styles.prevAvatar)}
+             onClick={prev}
+             style={{backgroundImage: `url(${getImage(activeIndex, -1).image})`}}>
+        </div>
+        <div className={classnames(styles.avatar, styles.avatarActive)}
+             style={{backgroundImage: `url(${getImage(activeIndex, 0).image})`}}>
+        </div>
+        <div className={classnames(styles.avatar, styles.nextAvatar)}
+             onClick={next}
+             style={{backgroundImage: `url(${getImage(activeIndex, 1).image})`}}
+        >
+        </div>
     </div>
 };
 
