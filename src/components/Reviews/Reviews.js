@@ -104,6 +104,7 @@ class Reviews extends Component {
         document.addEventListener("touchstart", this.touchstart, false);
         document.addEventListener("touchend", this.touchend, false);
         this.fixWidth();
+        this.loadImages();
     }
 
     componentWillUnmount() {
@@ -128,6 +129,13 @@ class Reviews extends Component {
             </div>
         );
     }
+
+    loadImages = () => {
+        reviews.forEach(r => {
+            const i = new Image();
+            i.src = r.image;
+        });
+    };
 
     prev = () => {
         let activeReviewIndex = this.state.activeReviewIndex - 1;
@@ -155,7 +163,7 @@ class Reviews extends Component {
             || document.body.clientWidth;
         if (width < 700) {
             this.setState({
-                width: width-50
+                width: width - 50
             })
         } else if (this.state.width != 700) {
             this.setState({
@@ -165,25 +173,24 @@ class Reviews extends Component {
     };
 
 
-
-    touchstart = (event) =>{
+    touchstart = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        initialPoint=event.changedTouches[0];
+        initialPoint = event.changedTouches[0];
     };
 
     touchend = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        if(event.target.className == styles.comment){
+        if (event.target.className == styles.comment) {
 
-            finalPoint=event.changedTouches[0];
+            finalPoint = event.changedTouches[0];
             const xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
             const yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
             if (xAbs > 20 || yAbs > 20) {
                 if (xAbs > yAbs) {
-                    if (finalPoint.pageX < initialPoint.pageX){
-                       this.next();
+                    if (finalPoint.pageX < initialPoint.pageX) {
+                        this.next();
                     } else {
                         this.prev();
                     }
