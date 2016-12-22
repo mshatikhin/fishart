@@ -16,7 +16,10 @@
 }
 
 .table th:first-child {
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 16px;
+    color: #303030;
+    letter-spacing: 0.4px;
     text-align: left;
 }
 
@@ -29,9 +32,6 @@
     width: 240px;
     text-align: center;
     padding: 0 10px;
-    font-weight: 100;
-    font-size: 14px;
-    color: #303030;
 }
 
 .table th {
@@ -47,7 +47,7 @@
 
 .table td {
     font-weight: 100;
-    font-size: 13px;
+    font-size: 14px;
     color: #606060;
     padding: 10px;
     text-align: center;
