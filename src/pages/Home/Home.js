@@ -3,6 +3,7 @@ import styles from "./Home.css";
 import {Component} from "react";
 import { default as Video, Overlay } from 'react-html5video';
 import Reviews from "../../components/Reviews";
+import {Link} from "react-router";
 
 class Home extends Component {
 
@@ -24,8 +25,12 @@ class Home extends Component {
                         <source src={require("./video/fishart_showreel_2015.mp4")} type="video/mp4"/>
                         <Overlay />
                     </Video>
+                    <div className={styles.buttonWrapper}>
+                        <Link to="/portfolio" className={styles.buttonOrange}>
+                            ПЕРЕЙТИ В ПОРТФОЛИО
+                        </Link>
+                    </div>
                     <div className={styles.reviewsWrapper}>
-                        <h1 className={styles.reviewsHeader}>Наши клиенты о нас</h1>
                         <Reviews />
                     </div>
                 </div>

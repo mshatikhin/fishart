@@ -13,11 +13,8 @@
 
 .card {
     width: 100%;
-    margin-bottom: 50px;
-    color: rgba(0, 0, 0, .870588);
-    transition: all 450ms cubic-bezier(.23, 1, .32, 1) 0ms;
+    margin-bottom: 120px;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     background: rgb(255, 255, 255) url("./images/contact.jpg") no-repeat;
     background-size: cover;
     font-size: 14px;
@@ -42,7 +39,7 @@
     max-width: 100%;
 
     background: rgba(0, 0, 0, 0.80);
-    padding: 60px 68px 121px 40px;
+    padding: 60px 50px 120px 40px;
     font-size: 14px;
     color: #dfdfdf;
     line-height: 24px;

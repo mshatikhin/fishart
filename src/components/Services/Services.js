@@ -84,10 +84,27 @@ class Services extends Component {
                         </tbody>
                     </table>
                 </div>
-                {/*<div className={styles.advantages}>*/}
-                    {/*<h1 className={styles.advantagesHeader}>Наши преимущества</h1>*/}
-                    {/*<div></div>*/}
-                {/*</div>*/}
+                <div className={styles.advantages}>
+                    <h1 className={styles.advantagesHeader}>Наши преимущества</h1>
+                    <div className={styles.advantagesImages}>
+                        <div className={styles.advantagesImageWrap}>
+                            <div className={styles.advantagesImageModern}></div>
+                            <div>Современное съемочное оборудование</div>
+                        </div>
+                        <div className={styles.advantagesImageWrap}>
+                            <div className={styles.advantagesImageAudio}></div>
+                            <div>Профессиональная запись звука</div>
+                        </div>
+                        <div className={styles.advantagesImageWrap}>
+                            <div className={styles.advantagesImageFlash}></div>
+                            <div>Материалы на дизайнерской USB-флешке</div>
+                        </div>
+                        <div className={styles.advantagesImageWrap}>
+                            <div className={styles.advantagesImageWorld}></div>
+                            <div>Возможны заграничные съемки</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

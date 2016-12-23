@@ -92,7 +92,6 @@
 
 .advantages {
     padding-top: 50px;
-    background: #fcfbfd;
 }
 
 .advantagesHeader {
@@ -102,6 +101,45 @@
     letter-spacing: 0;
     text-align: center;
     margin: auto;
+}
+
+.advantagesImages {
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 50px 0 150px 0;
+}
+
+.advantagesImageWrap {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    font-weight: 100;
+}
+
+.advantagesImageAudio, .advantagesImageFlash, .advantagesImageModern, .advantagesImageWorld {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.advantagesImageModern {
+    background: url("./images/modern.png") no-repeat 50% 50%;
+}
+
+.advantagesImageAudio {
+    background: url("./images/audio.png") no-repeat 50% 50%;
+}
+
+.advantagesImageFlash {
+    background: url("./images/flash.png") no-repeat 50% 50%;
+}
+
+.advantagesImageWorld {
+    background: url("./images/world.png") no-repeat 50% 50%;
 }
 
 @media screen and (max-width: 980px) {

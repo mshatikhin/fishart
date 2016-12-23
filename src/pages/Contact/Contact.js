@@ -26,7 +26,6 @@ export default class About extends Component {
                             Эти кадры вы захотите показать вашим детям и даже внукам! Мы всегда ищем новые горизонты для нашего творчества.
                         </p>
                     </article>
-                    <div></div>
                 </div>
             </div>
         );
