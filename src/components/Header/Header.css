@@ -1,23 +1,20 @@
 .header {
-    position: fixed;
     color: #333;
-    background: #fbfbfb;
-    top: 0;
-    left: 0;
     display: block;
-    height: 80px;
     max-width: 100%;
     width: 100%;
     z-index: 100;
-    padding: 0 20px;
 }
 
 .headerWrapper {
     margin: 0 auto;
     max-width: 100%;
     text-align: center;
-    width: 1280px;
+    width: 1080px;
     overflow: hidden;
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+    padding: 0 40px;
 }
 
 .menu {
@@ -34,17 +31,30 @@
 .logoLink {
     float: left;
     font-family: 'Pacifico', cursive, Helvetica, Arial, sans-serif;
-    font-size: 36px;
-    color: #ff9f89;
+    font-size: 24px;
+    color: #c49b59;
     letter-spacing: 0.3px;
     text-align: left;
     line-height: 80px;
 }
 
 .logo {
-    border: none;
     display: inline-block;
+    vertical-align: middle;
+    border: none;
     outline: none;
+    margin-right: 10px;
+}
+
+.logoText {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.socials {
+    display: block;
+    text-align: center;
+    margin: 60px auto 20px auto;
 }
 
 @media screen and (max-width: 980px) {

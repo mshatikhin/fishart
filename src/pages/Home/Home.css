@@ -2,13 +2,15 @@
     display: block;
     width: 100%;
     margin: auto;
-    padding-top: 80px;
-    background: #fff;
+    padding-top: 60px;
     max-width: 100%;
     text-align: center;
 }
 
 .wrapper {
+    margin: auto;
+    width: 1080px;
+    max-width: 100%;
 }
 
 .video {
@@ -33,7 +35,6 @@
 }
 
 .reviewsWrapper {
-    background: #fcfbfd;
     margin-top: -25px;
 }
 

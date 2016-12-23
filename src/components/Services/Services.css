@@ -2,11 +2,11 @@
     display: block;
     max-width: 100%;
     margin: auto;
-    padding-top: 100px;
+    padding-top: 60px;
 }
 
 .tableWrapper {
-    max-width: 1280px;
+    max-width: 1080px;
     width: 100%;
     margin: auto auto 50px;
 }

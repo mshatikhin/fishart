@@ -1,5 +1,7 @@
-﻿import React from "react";
-import {Route, IndexRoute} from "react-router";
+﻿// @flow
+
+import React from "react";
+import {Route, IndexRedirect} from "react-router";
 import Layout from "../components/Layout/Layout";
 import Portfolio from "../pages/Portfolio/Portfolio";
 import Home from "../pages/Home";
@@ -14,7 +16,7 @@ export default function routes(storeRef) {
 
     return (
         <Route path="/" component={ Layout }>
-            <IndexRoute component={ Home }/>
+            <IndexRedirect to={"home"}/>
             <Route path="home" component={ Home }/>
             <Route path="portfolio" component={ Portfolio }/>
             <Route path="services" component={ Services }/>

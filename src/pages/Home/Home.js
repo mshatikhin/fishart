@@ -21,7 +21,7 @@ class Home extends Component {
                     >
                         <source src={require("./video/fishart_showreel_2015.webm")} type="video/webm"/>
                         <source src={require("./video/fishart_showreel_2015.ogv")} type="video/ogv"/>
-                        {/*<source src={require("./video/fishart_showreel_2015.mp4")} type="video/mp4"/>*/}
+                        <source src={require("./video/fishart_showreel_2015.mp4")} type="video/mp4"/>
                         <Overlay />
                     </Video>
                     <div className={styles.reviewsWrapper}>

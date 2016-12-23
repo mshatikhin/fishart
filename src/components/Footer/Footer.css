@@ -1,0 +1,97 @@
+.footerWrap {
+    width: 1080px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.footer {
+    display: table;
+    margin: auto;
+    max-width: 100%;
+    width: 1080px;
+    height: 100px;
+    color: #4b4949;
+    padding-bottom: 40px;
+}
+
+.call, .write, .look, .corporate {
+    display: table-cell;
+    border-left: 2px dashed rgba(196, 155, 89, 0.41);
+    padding: 0 34px 50px 34px;
+}
+
+.corporate {
+    width: 15%;
+    border-left: none;
+    font-family: Pacifico;
+    font-size: 18px;
+    color: #cccccc;
+    letter-spacing: 0.15px;
+}
+
+.call {
+    width: 30%;
+}
+
+.write {
+    width: 30%;
+}
+
+.look {
+    width: 25%;
+}
+
+.contact {
+    font-size: 13px;
+    color: #4b4949;
+    letter-spacing: 0.54px;
+    text-align: left;
+}
+
+.contact a, .contact a:hover {
+    color: #888;
+}
+
+.header {
+    font-size: 18px;
+    color: #606060;
+    letter-spacing: 0.15px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.delimeter {
+    border-top: 2px dashed rgba(196, 155, 89, 0.41);
+    margin-bottom: 20px;
+}
+
+.vk, .facebook, .instagram, .vimeo {
+    cursor: pointer;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    opacity: .9;
+    transition: .2s all ease-out;
+}
+
+.vk:hover, .facebook:hover, .instagram:hover, .vimeo:hover {
+    opacity: 1;
+}
+
+.vk {
+    background: transparent url("./images/vk.svg") no-repeat 50% 50%;
+}
+
+.facebook {
+    background: transparent url("./images/facebook.svg") no-repeat 50% 50%;
+}
+
+.instagram {
+    background: transparent url("./images/inst.svg") no-repeat 50% 50%;
+}
+
+.vimeo {
+    background: transparent url("./images/vimeo.svg") no-repeat 50% 50%;
+}
