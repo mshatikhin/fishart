@@ -33,7 +33,7 @@ const Footer = () => <div className={styles.footerWrap}>
             <div className={styles.contact}>
                 <a href="//instagram.com/fishart_video/" target="blank">
                     <div className={styles.instagram}></div>
-                    fishart_artem
+                    fishart_video
                 </a>
             </div>
             <div className={styles.contact}>
