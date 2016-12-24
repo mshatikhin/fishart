@@ -33,9 +33,9 @@
     font-family: 'Pacifico', cursive, Helvetica, Arial, sans-serif;
     font-size: 24px;
     color: #c49b59;
-    letter-spacing: 0.3px;
     text-align: left;
     line-height: 80px;
+    letter-spacing: 3px;
 }
 
 .logo {
