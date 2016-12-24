@@ -16,13 +16,13 @@
 .video {
     position: relative;
     outline: none !important;
+    width: 1080px;
+    max-width: 100%;
+    max-height: 450px;
 }
 
 .video video {
     min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
 }
 
 .overlay {
@@ -30,7 +30,7 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 6px;
+    bottom: 0;
     background: rgba(0, 0, 0, .3);
 }
 
