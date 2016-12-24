@@ -193,26 +193,19 @@ class Reviews extends Component {
 
 
     touchstart = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
         initialPoint = event.changedTouches[0];
     };
 
     touchend = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        if (event.target.className == styles.comment) {
-
-            finalPoint = event.changedTouches[0];
-            const xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
-            const yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
-            if (xAbs > 20 || yAbs > 20) {
-                if (xAbs > yAbs) {
-                    if (finalPoint.pageX < initialPoint.pageX) {
-                        this.next();
-                    } else {
-                        this.prev();
-                    }
+        finalPoint = event.changedTouches[0];
+        const xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+        const yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+        if (xAbs > 20 || yAbs > 20) {
+            if (xAbs > yAbs) {
+                if (finalPoint.pageX < initialPoint.pageX) {
+                    this.next();
+                } else {
+                    this.prev();
                 }
             }
         }
