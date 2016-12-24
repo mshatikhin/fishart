@@ -10,10 +10,10 @@ export default class Socials extends Component {
             <a href="//facebook.com/profile.php?id=100010467722687" target="blank">
                 <div className={styles.facebook}></div>
             </a>
-            <a href="//instagram.com/fishart_artem/" target="blank">
+            <a href="//instagram.com/fishart_video/" target="blank">
                 <div className={styles.instagram}></div>
             </a>
-            <a href="//vimeo.com/artzoom" target="blank">
+            <a href="//vimeo.com/fishart" target="blank">
                 <div className={styles.vimeo}></div>
             </a>
         </div>

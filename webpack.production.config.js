@@ -1,6 +1,6 @@
 var nodeEnv = process.env.NODE_ENV != null ? process.env.NODE_ENV.toString().trim() : "production";
 var buildPath = "/AppBuild/app/";
-var publicPath = "/fishart/app/";
+var publicPath = "/app/";
 
 var webpack = require("webpack");
 var path = require("path");

@@ -22,7 +22,7 @@ const Footer = () => <div className={styles.footerWrap}>
                 </a>
             </div>
             <div className={styles.contact}>
-                <a href="//facebook.com/fishart_video" target="blank">
+                <a href="//facebook.com/profile.php?id=100010467722687" target="blank">
                     <div className={styles.facebook}></div>
                     facebook.com/fishart_video
                 </a>
@@ -31,15 +31,15 @@ const Footer = () => <div className={styles.footerWrap}>
         <div className={styles.look}>
             <div className={styles.header}>Посмотреть</div>
             <div className={styles.contact}>
-                <a href="//instagram.com/fishart_artem" target="blank">
+                <a href="//instagram.com/fishart_video/" target="blank">
                     <div className={styles.instagram}></div>
                     fishart_artem
                 </a>
             </div>
             <div className={styles.contact}>
-                <a href="//vimeo.com/artzoom" target="blank">
+                <a href="//vimeo.com/fishart" target="blank">
                     <div className={styles.vimeo}></div>
-                    artzoom
+                    fishart
                 </a>
             </div>
         </div>
