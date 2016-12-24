@@ -1,14 +1,18 @@
 // @flow
 import styles from "./Home.css";
 import {Component} from "react";
-import { default as Video, Overlay } from 'react-html5video';
-import Reviews from "../../components/Reviews";
 import {Link} from "react-router";
+import {default as Video, Overlay} from 'react-html5video';
+import Reviews from "../../components/Reviews";
+import Modal from "../../components/Modal";
 
 class Home extends Component {
 
     constructor(props: any) {
         super(props);
+        this.state = {
+            showModal: false
+        }
     }
 
     render() {
@@ -25,6 +29,11 @@ class Home extends Component {
                         <source src={require("./video/fishart_showreel_2015.mp4")} type="video/mp4"/>
                         <Overlay />
                     </Video>
+                    <div className={styles.previewPortfolio}>
+                        <div className={styles.previewVideo1} onClick={() => this.showModal(196883323)}></div>
+                        <div className={styles.previewVideo2} onClick={() => this.showModal(149304979)}></div>
+                        <div className={styles.previewVideo3} onClick={() => this.showModal(137596126)}></div>
+                    </div>
                     <div className={styles.buttonWrapper}>
                         <Link to="/portfolio" className={styles.buttonOrange}>
                             ПЕРЕЙТИ В ПОРТФОЛИО
@@ -34,8 +43,45 @@ class Home extends Component {
                         <Reviews />
                     </div>
                 </div>
+                {this.state.showModal && this.renderModal()}
             </div>
         );
+    }
+
+    renderModal() {
+        let url = `https://player.vimeo.com/video/${this.state.id}?badge=0&title=0&byline=0&autopause=1`;
+        return <Modal
+            onClose={this.hideModal}
+            showShadow={true}
+            showClose={true}
+        >
+            <div className={styles.previewVideo}>
+                <iframe
+                    src={url}
+                    frameBorder="0"
+                    title={name}
+                    allowFullScreen=""></iframe>
+            </div>
+            <div className={styles.actions}>
+                <button className={styles.buttonOrange} onClick={this.hideModal}>
+                    Закрыть
+                </button>
+            </div>
+        </Modal>
+    }
+
+    showModal = (id: number) => {
+        this.setState({
+            showModal: true,
+            id
+        })
+    };
+
+    hideModal = () => {
+        this.setState({
+            showModal: false,
+            id: null
+        })
     }
 }
 

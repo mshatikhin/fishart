@@ -97,15 +97,92 @@
     background: #ff8736;
 }
 
-@media screen and (max-width: 800px) {
-    .header {
-        font-size: 1em;
+.previewPortfolio {
+    margin: 60px auto 50px;
+    text-align: center;
+}
+
+.previewVideo1, .previewVideo2, .previewVideo3 {
+    position: relative;
+    width: 340px;
+    height: 141px;
+    display: inline-block;
+    background-size: cover;
+    margin-right: 30px;
+    transition: .3s all ease;
+    cursor: pointer;
+}
+
+.previewVideo1:after,
+.previewVideo2:after,
+.previewVideo3:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .2s all ease;
+    background: transparent url("./images/play.png") no-repeat 50% 50%;
+    opacity: .7;
+}
+
+.previewVideo1:hover:after,
+.previewVideo2:hover:after,
+.previewVideo3:hover:after {
+    background-color: rgba(34, 34, 34, .5);
+    opacity: 1;
+}
+
+.previewVideo1 {
+    background: url("./images/Ivan_i_Anna.jpg") no-repeat;
+}
+
+.previewVideo2 {
+    background: url("./images/Kristina_i_Mikhail.jpg") no-repeat;
+}
+
+.previewVideo3 {
+    background: url("./images/Liza_i_Sasha.jpg") no-repeat;
+    margin-right: 0px;
+}
+
+.previewVideo {
+    box-sizing: border-box;
+    width: 1080px;
+    max-width: 100%;
+    padding: 60px;
+    transition: .2s all ease;
+}
+
+.previewVideo iframe {
+    width: 1080px;
+    height: 448px;
+    max-width: 100%;
+}
+
+.actions {
+    padding: 0 0 60px 0;
+}
+
+@media screen and (max-width: 1100px) {
+    .previewVideo {
+        width: 800px;
+    }
+
+    .previewVideo1, .previewVideo2, .previewVideo3 {
+        display: block;
+        margin: auto auto 20px;
     }
 }
 
-@media screen and (max-width: 500px) {
-    .root {
-        padding-top: 430px;
+@media screen and (max-width: 800px) {
+    .previewVideo {
+        width: 500px;
+    }
+
+    .header {
+        font-size: 1em;
     }
 }
 

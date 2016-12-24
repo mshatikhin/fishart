@@ -69,7 +69,7 @@ const getImage = (activeIndex, index) => {
         : reviews[activeIndex + index]
 };
 
-const ReviewAvatars = ({reviews, activeIndex, prev, next}) => {
+const ReviewAvatars = ({activeIndex, prev, next}) => {
     return <div className={styles.avatarWrapper}>
         <div className={classnames(styles.avatar, styles.prevAvatar)}
              onClick={prev}
@@ -112,10 +112,12 @@ class Reviews extends Component {
     }
 
     componentDidMount() {
-        // this.timer = setInterval(this.next, 3000);
+        //this.timer = setInterval(this.next, 15000);
         window.addEventListener("resize", this.fixWidth);
-        document.addEventListener("touchstart", this.touchstart, false);
-        document.addEventListener("touchend", this.touchend, false);
+        const elem = this.refs["ReviewTexts"];
+        
+        elem.addEventListener("touchstart", this.touchstart, false);
+        elem.addEventListener("touchend", this.touchend, false);
         this.fixWidth();
         this.loadImages();
     }
@@ -131,14 +133,18 @@ class Reviews extends Component {
                 <div>
                     <button className={styles.prev} onClick={this.prev}></button>
                     <ReviewAvatars
-                        reviews={reviews}
                         activeIndex={this.state.activeReviewIndex}
                         prev={this.prev}
                         next={this.next}
                     />
                     <button className={styles.next} onClick={this.next}></button>
                 </div>
-                <ReviewTexts reviews={reviews} activeIndex={this.state.activeReviewIndex} width={this.state.width}/>
+                <div ref="ReviewTexts">
+                    <ReviewTexts
+                        reviews={reviews}
+                        activeIndex={this.state.activeReviewIndex}
+                        width={this.state.width}/>
+                </div>
             </div>
         );
     }

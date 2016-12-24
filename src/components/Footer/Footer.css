@@ -96,3 +96,16 @@
 .vimeo {
     background: transparent url("./images/vimeo.svg") no-repeat 50% 50%;
 }
+
+@media screen and (max-width: 980px) {
+    .footer {
+        display: block;
+        height: auto;
+    }
+
+    .call, .write, .look, .corporate {
+        display: block;
+        width: 100%;
+    }
+
+}
