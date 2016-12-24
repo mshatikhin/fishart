@@ -35,9 +35,9 @@ class Home extends Component {
                         <div className={styles.previewVideo3} onClick={() => this.showModal(178455113)}></div>
                     </div>
                     <div className={styles.buttonWrapper}>
-                        <Link to="/portfolio" className={styles.buttonOrange}>
+                        <a href="/portfolio" className={styles.buttonOrange}>
                             ПЕРЕЙТИ В ПОРТФОЛИО
-                        </Link>
+                        </a>
                     </div>
                     <div className={styles.reviewsWrapper}>
                         <Reviews />

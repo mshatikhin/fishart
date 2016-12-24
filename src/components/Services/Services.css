@@ -29,7 +29,7 @@
 .table td:nth-child(2),
 .table td:nth-child(3),
 .table td:nth-child(4) {
-    width: 240px;
+    width: 230px;
     text-align: center;
     padding: 0 10px;
 }
@@ -74,8 +74,7 @@
     width: 20px;
     height: 20px;
     margin: auto;
-    background: #ff9f89;
-    /*url("./images/green.png") no-repeat 50% 50%;*/
+    background: #deb169;
     border-radius: 50%;
 }
 
@@ -90,24 +89,45 @@
     margin: 2px;
 }
 
+.additional {
+    width: 1080px;
+    max-width: 100%;
+    margin: 100px auto auto;
+}
+
 .advantages {
     padding-top: 50px;
 }
 
-.advantagesHeader {
+.hint {
+    font-style: italic;
+    display: inline-block;
+    vertical-align: super;
+    color: #aaa;
+    font-weight: 100;
+}
+
+.additionalServices {
+    font-weight: 100;
+    font-size: 14px;
+    color: #606060;
+    padding: 10px;
+}
+
+.advantagesHeader, .additionalHeader {
     font-weight: 100;
     font-size: 28px;
     color: #303030;
     letter-spacing: 0;
     text-align: center;
-    margin: auto;
+    margin: auto auto 50px;
 }
 
 .advantagesImages {
     display: block;
     margin: auto;
     text-align: center;
-    padding: 50px 0 150px 0;
+    padding: 0 0 150px 0;
 }
 
 .advantagesImageWrap {
@@ -119,7 +139,7 @@
     font-weight: 100;
 }
 
-.advantagesImageAudio, .advantagesImageFlash, .advantagesImageModern, .advantagesImageWorld {
+.advantagesImageAudio, .advantagesImageAuto, .advantagesImageModern, .advantagesImageWorld {
     display: inline-block;
     width: 200px;
     height: 100px;
@@ -134,8 +154,8 @@
     background: url("./images/audio.png") no-repeat 50% 50%;
 }
 
-.advantagesImageFlash {
-    background: url("./images/flash.png") no-repeat 50% 50%;
+.advantagesImageAuto {
+    background: url("./images/auto.png") no-repeat 50% 50%;
 }
 
 .advantagesImageWorld {

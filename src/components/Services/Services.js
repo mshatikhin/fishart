@@ -22,31 +22,7 @@ class Services extends Component {
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Предварительная встреча перед свадьбой</td>
-                            <td><span className={styles.green} title="Включено в пакет"></span></td>
-                            <td><span className={styles.green} title="Включено в пакет"></span></td>
-                            <td><span className={styles.green} title="Включено в пакет"></span></td>
-                        </tr>
-                        <tr>
-                            <td>Работа двух операторов на свадьбе</td>
-                            <td>8 часов</td>
-                            <td>10 часов</td>
-                            <td>12 часов</td>
-                        </tr>
-                        <tr className={styles.emptyRow}>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Монтаж свадебного клипа (3-4 мин)</td>
-                            <td><span className={styles.green} title="Включено в пакет"></span></td>
-                            <td><span className={styles.green} title="Включено в пакет"></span></td>
-                            <td><span className={styles.green} title="Включено в пакет"></span></td>
-                        </tr>
-                        <tr>
-                            <td>Монтаж тизера для инстаграм (15 сек)</td>
+                            <td>Предварительная встреча</td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
@@ -58,19 +34,31 @@ class Services extends Component {
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                         </tr>
                         <tr>
+                            <td>Работа двух операторов</td>
+                            <td>10 часов</td>
+                            <td>10 часов</td>
+                            <td>Полный день</td>
+                        </tr>
+                        <tr>
+                            <td>Монтаж свадебного клипа (3-4 мин)</td>
+                            <td><span className={styles.green} title="Включено в пакет"></span></td>
+                            <td><span className={styles.green} title="Включено в пакет"></span></td>
+                            <td><span className={styles.green} title="Включено в пакет"></span></td>
+                        </tr>
+                        <tr>
                             <td>Запись исходного видео на носитель клиента</td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                         </tr>
-                        <tr className={styles.emptyRow}>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        <tr>
+                            <td>Монтаж свадебного фильма (15-30мин)</td>
+                            <td><span className={styles.grey} title="Не входит в пакет"></span></td>
+                            <td><span className={styles.green} title="Включено в пакет"></span></td>
+                            <td><span className={styles.green} title="Включено в пакет"></span></td>
                         </tr>
                         <tr>
-                            <td>Монтаж свадебного фильма</td>
+                            <td>Монтаж тизера для инстаграм (30-60сек)</td>
                             <td><span className={styles.grey} title="Не входит в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
@@ -81,8 +69,20 @@ class Services extends Component {
                             <td><span className={styles.grey} title="Не входит в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                         </tr>
+                        <tr>
+                            <td>Монтаж клипа «love story» и показ в день свадьбы</td>
+                            <td><span className={styles.grey} title="Не входит в пакет"></span></td>
+                            <td><span className={styles.grey} title="Не входит в пакет"></span></td>
+                            <td><span className={styles.green} title="Включено в пакет"></span></td>
+                        </tr>
                         </tbody>
                     </table>
+                </div>
+                <div className={styles.additional}>
+                    <div className={styles.additionalHeader}>Дополнительные услуги</div>
+                    <div className={styles.additionalServices}>Монтаж банкета (1-1.5 часа) <span className={styles.hint}>* только для пакета стандарт</span></div>
+                    <div className={styles.additionalServices}>Съемка “Love Story”</div>
+                    <div className={styles.additionalServices}>Экспресс монтаж</div>
                 </div>
                 <div className={styles.advantages}>
                     <h1 className={styles.advantagesHeader}>Наши преимущества</h1>
@@ -96,8 +96,8 @@ class Services extends Component {
                             <div>Профессиональная запись звука</div>
                         </div>
                         <div className={styles.advantagesImageWrap}>
-                            <div className={styles.advantagesImageFlash}></div>
-                            <div>Материалы на дизайнерской USB-флешке</div>
+                            <div className={styles.advantagesImageAuto}></div>
+                            <div>Съемочная группа на своем авто</div>
                         </div>
                         <div className={styles.advantagesImageWrap}>
                             <div className={styles.advantagesImageWorld}></div>

@@ -23,36 +23,10 @@
 
 .activeLink {
     position: relative;
-    color: #f87933;
+    color: #C49B59;
     display: inline-block;
     vertical-align: middle;
     height: 100%;
-}
-
-.activeLink:before {
-    position: absolute;
-    left: -10px;
-    bottom: 15px;
-    content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    border: none;
-    border-left: 1px solid #f87933;
-    border-bottom: 1px solid #f87933;
-}
-
-.activeLink:after {
-    position: absolute;
-    right: -10px;
-    top: 15px;
-    content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    border: none;
-    border-right: 1px solid #f87933;
-    border-top: 1px solid #f87933;
 }
 
 @media screen and (max-width: 980px) {
