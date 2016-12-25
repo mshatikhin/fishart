@@ -16,18 +16,16 @@ class Home extends Component {
     }
 
     render() {
-        const Overlay = () => <div className={styles.overlay}></div>;
         return (
             <div className={styles.root}>
                 <div className={styles.wrapper}>
-                    <Video controls autoPlay loop muted
+                    <Video autoPlay loop muted
                            poster={require("./video/poster.png")}
                            className={styles.video}
                     >
                         <source src={require("./video/fishart_showreel_2015.webm")} type="video/webm"/>
                         <source src={require("./video/fishart_showreel_2015.ogv")} type="video/ogv"/>
                         <source src={require("./video/fishart_showreel_2015.mp4")} type="video/mp4"/>
-                        <Overlay />
                     </Video>
                     <div className={styles.previewPortfolio}>
                         <div className={styles.previewVideo1} onClick={() => this.showModal(196883323)}></div>

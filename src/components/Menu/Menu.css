@@ -29,16 +29,18 @@
     height: 100%;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 768px) {
     .wrap {
         text-align: center;
     }
 
     .link {
         display: block;
+        height: auto;
         width: 100%;
-        font-size: 20px;
-        padding: 4px;
+        font-size: 16px;
+        line-height: 40px;
+        padding: 0;
         font-weight: 300;
         text-align: center;
     }
