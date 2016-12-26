@@ -9,7 +9,8 @@ html {
     min-height: 100%;
     padding: 0;
     margin: 0;
-    background-image:linear-gradient(-180deg, #faebd6 0%, #f9f3ec 26%);
+    /*background-image:linear-gradient(-180deg, #faebd6 0%, #f9f3ec 26%);*/
+    background: #fff;
 }
 
 body {

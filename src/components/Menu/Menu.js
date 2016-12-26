@@ -19,6 +19,9 @@ export default class Menu extends Component {
                 <MenuLink url="/portfolio" title="ПОРТФОЛИО"/>
                 <MenuLink url="/services" title="УСЛУГИ"/>
                 <MenuLink url="/contact" title="КОНТАКТЫ"/>
+                <div className={styles.socials}>
+                    <Socials />
+                </div>
             </nav>
         );
     }

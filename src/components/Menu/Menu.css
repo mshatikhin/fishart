@@ -14,7 +14,8 @@
     font-size: 14px;
     color: #4b4949;
     letter-spacing: 0.18px;
-    font-weight: 500;
+    font-weight: 100;
+    border-bottom: 4px solid transparent;
 }
 
 .link:last-child {
@@ -23,13 +24,34 @@
 
 .activeLink {
     position: relative;
-    color: #C49B59;
     display: inline-block;
     vertical-align: middle;
     height: 100%;
+    border-bottom: 4px solid #838181;
+}
+
+.socials {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 @media screen and (max-width: 768px) {
+    .socials {
+        display: block;
+        padding: 10px 0 30px 0;
+    }
+
+    .link {
+        font-size: 12px;
+        border: none;
+    }
+
+    .activeLink {
+        border: none;
+        background-color: #ff9f89;
+        color: #fff;
+    }
+
     .wrap {
         text-align: center;
     }
