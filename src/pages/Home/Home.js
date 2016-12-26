@@ -21,6 +21,7 @@ class Home extends Component {
                 <div className={styles.wrapper}>
                     <Video autoPlay loop muted
                            poster={require("./video/poster.png")}
+                           preload="auto"
                            className={styles.video}
                     >
                         <source src={require("./video/fishart_showreel_2015.webm")} type="video/webm"/>
