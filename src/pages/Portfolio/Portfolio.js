@@ -9,7 +9,7 @@ const propTypes = {
 
 class PortfolioContainer extends Component {
 
-    constructor(props) {
+    constructor(props: any) {
         super(props);
     }
 
@@ -22,7 +22,6 @@ class PortfolioContainer extends Component {
                         <iframe
                             src={url}
                             frameBorder="0"
-                            title={name}
                             allowFullScreen=""></iframe>
                     </div>
                 })}

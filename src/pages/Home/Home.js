@@ -6,12 +6,19 @@ import {default as Video, Overlay} from 'react-html5video';
 import Reviews from "../../components/Reviews";
 import Modal from "../../components/Modal";
 
+type IState = {
+    showModal: boolean;
+    id: ?number;
+}
+
 class Home extends Component {
+    state: IState;
 
     constructor(props: any) {
         super(props);
         this.state = {
-            showModal: false
+            showModal: false,
+            id: 0
         }
     }
 
@@ -48,7 +55,7 @@ class Home extends Component {
     }
 
     renderModal() {
-        let url = `https://player.vimeo.com/video/${this.state.id}?badge=0&title=0&byline=0&autopause=1`;
+        let url = this.state.id && `https://player.vimeo.com/video/${this.state.id}?badge=0&title=0&byline=0&autopause=1`;
         return <Modal
             onClose={this.hideModal}
             showShadow={true}
@@ -58,7 +65,6 @@ class Home extends Component {
                 <iframe
                     src={url}
                     frameBorder="0"
-                    title={name}
                     allowFullScreen=""></iframe>
             </div>
             <div className={styles.actions}>

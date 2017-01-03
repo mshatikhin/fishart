@@ -11,7 +11,7 @@ import Services from "../components/Services";
 
 let store;
 
-export default function routes(storeRef) {
+export default function routes(storeRef: any) {
     store = storeRef;
 
     return (
