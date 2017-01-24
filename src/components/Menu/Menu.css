@@ -1,6 +1,7 @@
 .wrap {
     display: block;
     width: 100%;
+    margin-top: 32px;
 }
 
 .link {
@@ -9,13 +10,11 @@
     text-align: left;
     display: inline-block;
     vertical-align: middle;
-    height: 100%;
-    line-height: 80px;
     font-size: 14px;
     color: #4b4949;
     letter-spacing: 0.18px;
     font-weight: 100;
-    border-bottom: 4px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
 .link:last-child {
@@ -26,8 +25,7 @@
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    height: 100%;
-    border-bottom: 4px solid #838181;
+    border-bottom: 2px solid #838181;
 }
 
 .socials {

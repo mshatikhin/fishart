@@ -21,7 +21,7 @@
 }
 
 .reviewsWrapper {
-    margin-top: 125px;
+    margin-top: 80px;
 }
 
 .reviewsHeader {
@@ -42,6 +42,7 @@
     display: inline-block;
     line-height: 48px;
     background: #f87933;
+    background: #696969;
     border-radius: 2px;
     padding: 0 40px;
     height: 48px;
@@ -81,6 +82,7 @@
 
 .buttonOrange:hover {
     background: #ff8736;
+    background: #535353;
 }
 
 .previewPortfolio {
@@ -125,7 +127,7 @@
 }
 
 .previewVideo2 {
-    background: url("./images/Kristina_i_Mikhail.jpg") no-repeat;
+    background: url("./images/uliana.jpg") no-repeat;
 }
 
 .previewVideo3 {
@@ -142,6 +144,7 @@
 }
 
 .previewVideo iframe {
+    width: 1080px;
     max-width: 100%;
 }
 

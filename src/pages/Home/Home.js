@@ -27,7 +27,7 @@ class Home extends Component {
             <div className={styles.root}>
                 <div className={styles.wrapper}>
                     <Video autoPlay loop muted
-                           poster={require("./video/poster.png")}
+                           poster={require("./video/poster.jpg")}
                            preload="auto"
                            className={styles.video}
                     >
@@ -37,7 +37,7 @@ class Home extends Component {
                     </Video>
                     <div className={styles.previewPortfolio}>
                         <div className={styles.previewVideo1} onClick={() => this.showModal(196883323)}></div>
-                        <div className={styles.previewVideo2} onClick={() => this.showModal(154054283)}></div>
+                        <div className={styles.previewVideo2} onClick={() => this.showModal(200027834)}></div>
                         <div className={styles.previewVideo3} onClick={() => this.showModal(178455113)}></div>
                     </div>
                     <div className={styles.buttonWrapper}>
@@ -63,6 +63,8 @@ class Home extends Component {
         >
             <div className={styles.previewVideo}>
                 <iframe
+                    width={1080}
+                    height={538}
                     src={url}
                     frameBorder="0"
                     allowFullScreen=""></iframe>

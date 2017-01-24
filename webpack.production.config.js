@@ -54,7 +54,7 @@ var loaders = [
         loader: ExtractTextPlugin.extract("css?modules&importLoaders=1&localIdentName=[hash:base64:5]!postcss-loader")
     },
     {
-        test: /\.(png|jpg|jpeg|gif|svg|mp4|ogv|webm)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|mp4|ogv|webm|ico)$/,
         loader: "url?name=[path][name].[ext]&limit=10000"
     }
 ];

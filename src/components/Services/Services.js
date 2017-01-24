@@ -11,24 +11,29 @@ class Services extends Component {
         return (
             <div className={styles.root}>
                 <div className={styles.tableWrapper}>
+                    <div className={styles.additionalHeader}>Специализация</div>
+                    <div className={styles.additionalServices}>Свадьбы</div>
+                    <div className={styles.additionalServices}>Портретная и семейная съемки</div>
+                    <div className={styles.additionalServices}>“Love Story”</div>
+                    <div className={styles.additionalServices}>Съемки за рубежом</div>
                     <table className={styles.table}>
                         <thead>
                         <tr>
-                            <th>Перечень услуг</th>
-                            <th>Стандарт</th>
-                            <th>Полный день</th>
+                            <th>&nbsp;</th>
+                            <th>Клип</th>
+                            <th>Фильм</th>
                             <th>Всё включено</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>Предварительная встреча</td>
+                            <td>Предварительная консультация</td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                         </tr>
                         <tr>
-                            <td>Фирменная коробочка с флешкой</td>
+                            <td>Индивидуальная коробочка с флешкой</td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
@@ -46,19 +51,13 @@ class Services extends Component {
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                         </tr>
                         <tr>
-                            <td>Запись исходного видео на носитель клиента</td>
-                            <td><span className={styles.green} title="Включено в пакет"></span></td>
-                            <td><span className={styles.green} title="Включено в пакет"></span></td>
-                            <td><span className={styles.green} title="Включено в пакет"></span></td>
-                        </tr>
-                        <tr>
-                            <td>Монтаж свадебного фильма (15-30мин)</td>
+                            <td>Монтаж свадебного фильма (15-30 мин)</td>
                             <td><span className={styles.grey} title="Не входит в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                         </tr>
                         <tr>
-                            <td>Монтаж тизера для инстаграм (30-60сек)</td>
+                            <td>Монтаж тизера для инстаграм</td>
                             <td><span className={styles.grey} title="Не входит в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
                             <td><span className={styles.green} title="Включено в пакет"></span></td>
@@ -81,7 +80,7 @@ class Services extends Component {
                 <div className={styles.additional}>
                     <div className={styles.additionalHeader}>Дополнительные услуги</div>
                     <div className={styles.additionalServices}>Монтаж банкета (1-1.5 часа) <span className={styles.hint}>* только для пакета стандарт</span></div>
-                    <div className={styles.additionalServices}>Съемка “Love Story”</div>
+                    <div className={styles.additionalServices}>Запись исходного видео на носитель клиента</div>
                     <div className={styles.additionalServices}>Экспресс монтаж</div>
                 </div>
                 <div className={styles.advantages}>
@@ -97,7 +96,7 @@ class Services extends Component {
                         </div>
                         <div className={styles.advantagesImageWrap}>
                             <div className={styles.advantagesImageAuto}></div>
-                            <div>Съемочная группа на своем авто</div>
+                            <div>Съёмочная группа  на своем авто</div>
                         </div>
                         <div className={styles.advantagesImageWrap}>
                             <div className={styles.advantagesImageWorld}></div>

@@ -72,8 +72,8 @@
     "url": "https://github.com/mshatikhin/fishart.git"
   },
   "scripts": {
-    "build": "webpack --progress --colors --config webpack.production.config.js",
-    "build_dev": "webpack --progress --colors --watch",
+    "build": "webpack -p --progress --colors --config webpack.production.config.js",
+    "build_dev": "webpack -d --progress --colors --watch",
     "deploy": "set NODE_ENV='production' && npm run build",
     "gh": "npm run deploy && gh-pages -d AppBuild",
     "dev": "set NODE_ENV='development' && npm run build_dev",

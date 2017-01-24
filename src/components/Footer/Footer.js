@@ -4,7 +4,7 @@ const Footer = () => <div className={styles.footerWrap}>
     <div className={styles.delimeter}></div>
     <div className={styles.footer}>
         <div className={styles.corporate}>
-            FishArt
+            Fish Art
         </div>
         <div className={styles.call}>
             <div className={styles.header}>Позвонить</div>
