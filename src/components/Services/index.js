@@ -1,2 +1,2 @@
-import Services from "./Services.js";
-module.exports = Services;
+export { default } from "./Services";
+

@@ -1,2 +1,2 @@
-import Modal from './Modal';
-module.exports = Modal;
+export { default } from "./Modal";
+

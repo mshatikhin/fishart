@@ -37,8 +37,8 @@ class Home extends Component {
                     </Video>
                     <div className={styles.previewPortfolio}>
                         <div className={styles.previewVideo1} onClick={() => this.showModal(196883323)}></div>
+                        <div className={styles.previewVideo3} onClick={() => this.showModal(212740962)}></div>
                         <div className={styles.previewVideo2} onClick={() => this.showModal(200027834)}></div>
-                        <div className={styles.previewVideo3} onClick={() => this.showModal(178455113)}></div>
                     </div>
                     <div className={styles.buttonWrapper}>
                         <a href="/portfolio" className={styles.buttonOrange}>
